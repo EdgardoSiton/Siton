@@ -5,6 +5,8 @@
  */
 package userpages;
 
+import java.awt.Color;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 /**
  *
  * @author edgar
@@ -16,7 +18,13 @@ public class Dashboard extends javax.swing.JInternalFrame {
      */
     public Dashboard() {
         initComponents();
+        this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
+        Userpages bi = (Userpages)this.getUI();
+        bi.setNorthpane(null);
     }
+     Color navcolor = new Color(102,102,102);
+   Color headcolor = new Color(255,102,102);
+   Color bodycolor = new Color(255,153,153);
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -28,33 +36,137 @@ public class Dashboard extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        managepanel = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(760, 420));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(null);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel1.setText("Membership Registration");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 300, 70));
+        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 120));
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 120, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 130, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel3);
+        jPanel3.setBounds(440, 10, 120, 130);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setText("GYM MEMBERSHIP TRACKING SYSTEM");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(10, 10, 272, 20);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setText("ADDITIONAL SYSTEM DISCRIPTION");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(10, 30, 195, 15);
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 140));
 
         jPanel2.setBackground(new java.awt.Color(255, 153, 153));
         jPanel2.setLayout(null);
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 760, 380));
+
+        jPanel4.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel4.setPreferredSize(new java.awt.Dimension(160, 160));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userpages/icons8-gear-100.png"))); // NOI18N
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel6.setText("SETTINGS");
+        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 60, 20));
+
+        jPanel2.add(jPanel4);
+        jPanel4.setBounds(380, 40, 140, 130);
+
+        managepanel.setBackground(new java.awt.Color(255, 204, 204));
+        managepanel.setPreferredSize(new java.awt.Dimension(160, 160));
+        managepanel.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                managepanelMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                managepanelMouseExited(evt);
+            }
+        });
+        managepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userpages/icons8-admin-settings-male-100.png"))); // NOI18N
+        managepanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, -1));
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setText("MANAGE USER");
+        managepanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 90, 20));
+
+        jPanel2.add(managepanel);
+        managepanel.setBounds(40, 40, 140, 130);
+
+        jPanel6.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel6.setMinimumSize(new java.awt.Dimension(160, 160));
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userpages/icons8-reports-100.png"))); // NOI18N
+        jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, -1));
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel8.setText("REPORTS");
+        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 60, 20));
+
+        jPanel2.add(jPanel6);
+        jPanel6.setBounds(210, 40, 140, 130);
+
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 620, 190));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void managepanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepanelMouseEntered
+         
+         managepanel.setBackground(navcolor);
+    }//GEN-LAST:event_managepanelMouseEntered
+
+    private void managepanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepanelMouseExited
+       managepanel.setBackground(bodycolor);
+    }//GEN-LAST:event_managepanelMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel managepanel;
     // End of variables declaration//GEN-END:variables
 }
