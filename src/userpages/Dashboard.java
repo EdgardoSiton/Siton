@@ -5,26 +5,63 @@
  */
 package userpages;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
+import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
+import java.awt.BasicStroke;
+import java.awt.Color;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import javax.swing.BorderFactory;
+import javax.swing.JButton;
+import javax.swing.JOptionPane;
+import javax.swing.border.Border;
+import javax.swing.table.DefaultTableModel;
+import userpages.Dashboard.*;
+import javax.swing.JTable;
+import userpages.Dashboard;
 /**
  *
  * @author edgar
  */
 public class Dashboard extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form Dashboard
-     */
+         
     public Dashboard() {
         initComponents();
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
-        Userpages bi = (Userpages)this.getUI();
-        bi.setNorthpane(null);
+        BasicInternalFrameUI bi = (BasicInternalFrameUI)this.getUI();
+        bi.setNorthPane(null);
+   // jPanel2.setOpaque(false);
+    //jPanel2.setBackground(new Color(0,0,0,0));
     }
-     Color navcolor = new Color(102,102,102);
+    
+     Color navcolor = new Color(255,204,255);
    Color headcolor = new Color(255,102,102);
    Color bodycolor = new Color(255,153,153);
+    Color hover = new Color(255,204,204);
+   Color defbutton = new Color(255,204,255);
+   Border empty = BorderFactory.createEmptyBorder();
+  
+    void buttonBorderAnimation(JButton panel){
+       panel.setBackground(hover);
+        panel.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+       panel.setBorder(BorderFactory.createStrokeBorder(new BasicStroke(2.0f)));
+   }
+   void buttonDefaultColor(JButton panel){
+   panel.setBackground(defbutton);
+   panel.setBorder(empty);
+   }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -35,138 +72,521 @@ public class Dashboard extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        jPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
+        JPanel2 = new javax.swing.JPanel();
+        add = new javax.swing.JButton();
+        customername = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        managepanel = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel6 = new javax.swing.JPanel();
+        date = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        time = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        down = new javax.swing.JTextField();
+        balance = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        contact = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        search_button = new javax.swing.JButton();
+        clear = new javax.swing.JButton();
+        delete = new javax.swing.JButton();
+        Update = new javax.swing.JButton();
+        search = new javax.swing.JTextField();
+        theme = new javax.swing.JTextField();
+        Clear = new javax.swing.JButton();
+        location = new javax.swing.JTextField();
+        minimize = new javax.swing.JLabel();
+        close = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.HIDE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(760, 420));
+        setPreferredSize(new java.awt.Dimension(953, 470));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel1.setLayout(null);
+        jPanel.setBackground(new java.awt.Color(255, 204, 204));
+        jPanel.setPreferredSize(new java.awt.Dimension(953, 470));
+        jPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(102, 102, 102));
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("CUSTOMER CUSTOMIZE CAKE");
+        jPanel.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 20));
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 120, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 130, Short.MAX_VALUE)
-        );
+        JPanel2.setBackground(new java.awt.Color(255, 153, 153));
+        JPanel2.setPreferredSize(new java.awt.Dimension(760, 420));
+        JPanel2.setLayout(null);
 
-        jPanel1.add(jPanel3);
-        jPanel3.setBounds(440, 10, 120, 130);
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel1.setText("GYM MEMBERSHIP TRACKING SYSTEM");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(10, 10, 272, 20);
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setText("ADDITIONAL SYSTEM DISCRIPTION");
-        jPanel1.add(jLabel2);
-        jLabel2.setBounds(10, 30, 195, 15);
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 140));
-
-        jPanel2.setBackground(new java.awt.Color(255, 153, 153));
-        jPanel2.setLayout(null);
-
-        jPanel4.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel4.setPreferredSize(new java.awt.Dimension(160, 160));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userpages/icons8-gear-100.png"))); // NOI18N
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
-
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel6.setText("SETTINGS");
-        jPanel4.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, 60, 20));
-
-        jPanel2.add(jPanel4);
-        jPanel4.setBounds(380, 40, 140, 130);
-
-        managepanel.setBackground(new java.awt.Color(255, 204, 204));
-        managepanel.setPreferredSize(new java.awt.Dimension(160, 160));
-        managepanel.addMouseListener(new java.awt.event.MouseAdapter() {
+        add.setBackground(new java.awt.Color(255, 255, 255));
+        add.setText("ADD");
+        add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                managepanelMouseEntered(evt);
+                addMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                managepanelMouseExited(evt);
+                addMouseExited(evt);
             }
         });
-        managepanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+        JPanel2.add(add);
+        add.setBounds(90, 210, 70, 30);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userpages/icons8-admin-settings-male-100.png"))); // NOI18N
-        managepanel.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 120, -1));
+        customername.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        customername.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        customername.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        customername.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                customernameActionPerformed(evt);
+            }
+        });
+        JPanel2.add(customername);
+        customername.setBounds(140, 10, 120, 20);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel7.setText("MANAGE USER");
-        managepanel.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 90, 20));
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel3.setText("CUSTOMER NAME:");
+        JPanel2.add(jLabel3);
+        jLabel3.setBounds(10, 10, 121, 19);
 
-        jPanel2.add(managepanel);
-        managepanel.setBounds(40, 40, 140, 130);
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel4.setText("CAKE THEME");
+        JPanel2.add(jLabel4);
+        jLabel4.setBounds(50, 150, 84, 19);
 
-        jPanel6.setBackground(new java.awt.Color(255, 204, 204));
-        jPanel6.setMinimumSize(new java.awt.Dimension(160, 160));
-        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        date.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        date.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        date.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        date.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dateActionPerformed(evt);
+            }
+        });
+        JPanel2.add(date);
+        date.setBounds(140, 30, 120, 20);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/userpages/icons8-reports-100.png"))); // NOI18N
-        jPanel6.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 110, -1));
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel5.setText("DATE FOR PICK UP");
+        JPanel2.add(jLabel5);
+        jLabel5.setBounds(10, 30, 121, 19);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel8.setText("REPORTS");
-        jPanel6.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 60, 20));
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel6.setText("TIME FOR PICK");
+        JPanel2.add(jLabel6);
+        jLabel6.setBounds(10, 50, 97, 19);
 
-        jPanel2.add(jPanel6);
-        jPanel6.setBounds(210, 40, 140, 130);
+        time.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        time.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        time.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        time.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                timeActionPerformed(evt);
+            }
+        });
+        JPanel2.add(time);
+        time.setBounds(140, 50, 120, 20);
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 620, 190));
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel7.setText("DOWN ");
+        JPanel2.add(jLabel7);
+        jLabel7.setBounds(80, 70, 49, 19);
+
+        down.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        down.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        down.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        down.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                downActionPerformed(evt);
+            }
+        });
+        JPanel2.add(down);
+        down.setBounds(140, 70, 120, 20);
+
+        balance.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        balance.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        balance.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        balance.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                balanceActionPerformed(evt);
+            }
+        });
+        JPanel2.add(balance);
+        balance.setBounds(140, 90, 120, 20);
+
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel8.setText("BALANCE");
+        JPanel2.add(jLabel8);
+        jLabel8.setBounds(70, 90, 62, 19);
+
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel9.setText("LOCATION PICKUP");
+        JPanel2.add(jLabel9);
+        jLabel9.setBounds(10, 120, 124, 20);
+
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setText("CONTACT");
+        JPanel2.add(jLabel10);
+        jLabel10.setBounds(60, 180, 80, 19);
+
+        contact.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        contact.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        contact.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        contact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contactActionPerformed(evt);
+            }
+        });
+        JPanel2.add(contact);
+        contact.setBounds(140, 180, 120, 20);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "CUSTOMERNAME", "DATE FOR PICK UP", "TIME FOR PICK UP", "DOWN", "BALANCE", "LOCATION PICK UP", "CAKE THEME", "CONTACT"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        JPanel2.add(jScrollPane1);
+        jScrollPane1.setBounds(330, 90, 620, 190);
+
+        search_button.setBackground(new java.awt.Color(255, 255, 255));
+        search_button.setText("SEARCH");
+        search_button.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                search_buttonMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                search_buttonMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                search_buttonMouseExited(evt);
+            }
+        });
+        search_button.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                search_buttonActionPerformed(evt);
+            }
+        });
+        JPanel2.add(search_button);
+        search_button.setBounds(530, 40, 100, 30);
+
+        clear.setBackground(new java.awt.Color(255, 255, 255));
+        clear.setText("CLEAR");
+        clear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clearMouseExited(evt);
+            }
+        });
+        clear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearActionPerformed(evt);
+            }
+        });
+        JPanel2.add(clear);
+        clear.setBounds(170, 210, 70, 30);
+
+        delete.setBackground(new java.awt.Color(255, 255, 255));
+        delete.setText("DELETE");
+        delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteMouseExited(evt);
+            }
+        });
+        delete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteActionPerformed(evt);
+            }
+        });
+        JPanel2.add(delete);
+        delete.setBounds(10, 210, 69, 30);
+
+        Update.setBackground(new java.awt.Color(255, 255, 255));
+        Update.setText("UPDATE");
+        Update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UpdateMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                UpdateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                UpdateMouseExited(evt);
+            }
+        });
+        Update.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateActionPerformed(evt);
+            }
+        });
+        JPanel2.add(Update);
+        Update.setBounds(250, 210, 80, 30);
+
+        search.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        search.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        search.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+        JPanel2.add(search);
+        search.setBounds(370, 40, 150, 30);
+
+        theme.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        JPanel2.add(theme);
+        theme.setBounds(140, 150, 120, 20);
+
+        Clear.setText("CLEAR");
+        JPanel2.add(Clear);
+        Clear.setBounds(640, 40, 100, 30);
+
+        location.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        JPanel2.add(location);
+        location.setBounds(140, 120, 120, 18);
+
+        jPanel.add(JPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 950, 390));
+
+        minimize.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        minimize.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        minimize.setText("—");
+        minimize.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                minimizeMouseClicked(evt);
+            }
+        });
+        jPanel.add(minimize, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 10, 30, -1));
+
+        close.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        close.setText("X");
+        close.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                closeMouseClicked(evt);
+            }
+        });
+        jPanel.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 10, 30, -1));
+
+        getContentPane().add(jPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 953, 470));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void managepanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepanelMouseEntered
-         
-         managepanel.setBackground(navcolor);
-    }//GEN-LAST:event_managepanelMouseEntered
+    private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
 
-    private void managepanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managepanelMouseExited
-       managepanel.setBackground(bodycolor);
-    }//GEN-LAST:event_managepanelMouseExited
+    }//GEN-LAST:event_deleteMouseClicked
+
+    private void deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseEntered
+         buttonBorderAnimation(delete);
+    }//GEN-LAST:event_deleteMouseEntered
+
+    private void deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseExited
+         buttonDefaultColor(delete);
+    }//GEN-LAST:event_deleteMouseExited
+
+    private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        try{
+        int SelectRowIndex = jTable1.getSelectedRow();
+        model.removeRow(SelectRowIndex);
+        }catch(Exception ex){
+         JOptionPane.showMessageDialog(null,ex);
+        }
+    }//GEN-LAST:event_deleteActionPerformed
+
+    private void search_buttonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_search_buttonMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_search_buttonMouseClicked
+
+    private void search_buttonMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_search_buttonMouseEntered
+        buttonBorderAnimation(search_button);
+    }//GEN-LAST:event_search_buttonMouseEntered
+
+    private void search_buttonMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_search_buttonMouseExited
+         buttonDefaultColor(search_button);
+    }//GEN-LAST:event_search_buttonMouseExited
+
+    private void search_buttonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_search_buttonActionPerformed
+  DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        TableRowSorter<DefaultTableModel> obj  = new TableRowSorter<>(model);
+        jTable1.setRowSorter(obj);
+        obj.setRowFilter(RowFilter.regexFilter(search.getText()));       
+       
+    }//GEN-LAST:event_search_buttonActionPerformed
+      public static void AddRowToJTable(Object[] dataRow)
+    {
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.addRow(dataRow);
+        model.addRow(dataRow);
+    }                   
+    
+    private void clearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_clearMouseClicked
+
+    private void clearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseEntered
+       buttonBorderAnimation(clear);
+    }//GEN-LAST:event_clearMouseEntered
+
+    private void clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseExited
+        buttonDefaultColor(clear);
+    }//GEN-LAST:event_clearMouseExited
+
+    private void clearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_clearActionPerformed
+         customername.setText(null);
+        date.setText(null);
+        time.setText(null);
+        down.setText(null);
+        balance.setText(null);
+        location.setText(null);
+          theme.setText(null);
+           contact.setText(null);
+    }//GEN-LAST:event_clearActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+       DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+       TableRowSorter<DefaultTableModel>obj = new TableRowSorter<>(model);
+       jTable1.setRowSorter(obj);
+       obj.setRowFilter(RowFilter.regexFilter(search.getText()));
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void UpdateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateMouseClicked
+
+    private void UpdateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateMouseEntered
+
+    private void UpdateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UpdateMouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_UpdateMouseExited
+
+    private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
+         int i = jTable1.getSelectedRow();
+        DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        if(i >= 0 )
+        {
+            model.setValueAt(customername.getText(), i, 0);
+            model.setValueAt(date.getText(), i, 1);
+            model.setValueAt(time.getText(), i, 2);
+            model.setValueAt(down.getText(), i, 3);
+            model.setValueAt(balance.getText(), i, 4);
+            model.setValueAt(location.getText(), i, 5);
+            model.setValueAt(theme.getText(), i, 6);
+            model.setValueAt(contact.getText(), i, 7);
+        }else{
+            JOptionPane.showMessageDialog(null, "ERROR!");
+        }
+    }//GEN-LAST:event_UpdateActionPerformed
+
+    private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addMouseClicked
+
+    private void addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseEntered
+        buttonBorderAnimation(search_button);
+    }//GEN-LAST:event_addMouseEntered
+
+    private void addMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseExited
+        buttonDefaultColor(search_button);
+    }//GEN-LAST:event_addMouseExited
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+ DefaultTableModel model = (DefaultTableModel)jTable1.getModel();
+        model.addRow(new Object[]{customername.getText(), date.getText(),
+             time.getText(), down.getText(),balance.getText(), location.getText(), theme.getText(),contact.getText() });
+  
+    }//GEN-LAST:event_addActionPerformed
+
+    private void customernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_customernameActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_customernameActionPerformed
+
+    private void dateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_dateActionPerformed
+
+    private void timeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_timeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_timeActionPerformed
+
+    private void downActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_downActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_downActionPerformed
+
+    private void balanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_balanceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_balanceActionPerformed
+
+    private void contactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contactActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_contactActionPerformed
+
+    private void minimizeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_minimizeMouseClicked
+        setState(ICONIFIED);
+    }//GEN-LAST:event_minimizeMouseClicked
+
+    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
+
+        int a = JOptionPane.showConfirmDialog(null,"Do Your want to Exit");
+        if(a==JOptionPane.YES_OPTION ){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_closeMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Clear;
+    private javax.swing.JPanel JPanel2;
+    private javax.swing.JButton Update;
+    private javax.swing.JButton add;
+    private javax.swing.JTextField balance;
+    private javax.swing.JButton clear;
+    private javax.swing.JLabel close;
+    private javax.swing.JTextField contact;
+    private javax.swing.JTextField customername;
+    private javax.swing.JTextField date;
+    private javax.swing.JButton delete;
+    private javax.swing.JTextField down;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel managepanel;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel;
+    private javax.swing.JScrollPane jScrollPane1;
+    private static javax.swing.JTable jTable1;
+    private javax.swing.JTextField location;
+    private javax.swing.JLabel minimize;
+    private javax.swing.JTextField search;
+    private javax.swing.JButton search_button;
+    private javax.swing.JTextField theme;
+    private javax.swing.JTextField time;
     // End of variables declaration//GEN-END:variables
 }
